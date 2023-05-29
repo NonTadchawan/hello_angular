@@ -2,10 +2,9 @@
 <form>
   <h3 class="header">{{title}}</h3>
   <input type="text" name="title" [(ngModel)]="title"  >
-  <button name="send data" (click)="myFunc()" >send data</button>
   <br><br>
-  <a [routerLink]="['/api/student']"   >student</a>
+  <a routerLink="api/student"   >student</a>
   <br>
-  <a [routerLink]="['/faculty']" >faculty</a>
+  <a routerLink="faculty" >faculty</a>
 </form>
 <router-outlet></router-outlet>

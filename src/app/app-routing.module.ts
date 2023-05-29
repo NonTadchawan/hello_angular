@@ -7,7 +7,7 @@ import {FacultyComponent} from "./faculty/faculty.component";
 
 const routes: Routes = [
   //[{ path: 'user/:name', component: UserCmp }]
-  {path:"/api/student",component:StudentComponent},
+  {path:"api/student",component:StudentComponent},
   {path:"faculty",component:FacultyComponent}
 ];
 

@@ -13,27 +13,5 @@ export class AppComponent {
   constructor(private http: HttpClient) {
     this.http = http;
   }
-
-  myFunc = () => {
-    this.http.post("http://localhost:4200/api/student", this.title).subscribe({
-      next: data => {
-        console.log()
-      },
-      error: err => {
-        console.error(err.messages)
-      }
-    })
-  }
-
-
 }
-
-function Student (){
-
-}
-
-/*let s: Student
-s = {id: 1}
-s.name=""*/
-//let s = new Student()
 

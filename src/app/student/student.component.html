@@ -1,2 +1,78 @@
-<p>student works!</p>
-<button name="all student" (click)="findAllStudent" >all student</button>
+<br>
+<div class="row">
+  <a>เพิ่มนักศึกษาใหม่</a>
+  <br>
+  <label for="idSave"> รหัสนักศึกษา
+    <input type="text" id="idSave" name="id" [(ngModel)]="id">
+  </label>
+  <br>
+  <label for="name"> ชื่อนักศึกษา
+    <input type="text" id="name" name="name" [(ngModel)]="name">
+  </label>
+  <br>
+  <label for="faculty">เลือกสาขาวิชา</label>
+    <select name="faculty" id="faculty" (change)="" )>
+      <option value="1" [(ngModel)]="facultyId" >A engineering</option>
+      <option value="2" [(ngModel)]="facultyId">B engineering</option>
+      <option value="3" [(ngModel)]="facultyId">C engineering</option>
+    </select>
+  <input type="submit" value="submit">
+  <br>
+  <button name="sendData" (click)="saveStudent()">save student</button>
+</div>
+<br>
+<div class="row">
+  <label for="id">ค้นหาด้วยรหัสนักศึกษา
+    <input type="text" id="id" name="id" [(ngModel)]="id">
+    <button name="sendData" (click)="findById()">send data</button>
+ </label>
+</div>
+<br>
+<div class="row">
+  <label for="idDelete">ลบข้อมูลนักศึกษาด้วยรหัสนักศึกษา
+    <input type="text" id="idDelete" name="id" [(ngModel)]="id">
+    <button name="sendData" (click)="deleteById()">send data</button>
+  </label>
+</div>
+<br>
+<label for="all student">นักศึกษาทั้งหมด
+<button id="all student" name="all student" (click)="findAllStudent()">all student</button>
+</label>
+<br>
+<br>
+<table *ngIf="studentById">
+  <thead>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>grade</th>
+    <th>faculty</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{studentById.id}}</td>
+    <td>{{studentById.name}}</td>
+    <td>{{studentById.grad}}</td>
+    <td>{{studentById.faculty?.name}}</td>
+  </tr>
+  </tbody>
+</table>
+<table *ngIf="totalStudent">
+  <thead>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>grade</th>
+    <th>faculty</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let item of totalStudent">
+  <tr>
+    <td>{{item.id}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.grad}}</td>
+    <td>{{item.faculty?.name}}</td>
+  </tr>
+  </tbody>
+</table>
